@@ -17,11 +17,11 @@ So for a successful installation, we must first deploy the contract, and then up
 
 3. Create the .env file inside /deploy/ folder and specify your `PRIVATE_KEY` in it from which the contract will be deployed.
 
-3. Also specify `RPC_URL` in the .env file.
+4. Also specify `RPC_URL` in the .env file.
 
-4. Specify `REFILL_AMOUNT` as `0.001` in the .env file. You can change it. This amount will be transfered to the contract balance. 
+5. Specify `REFILL_AMOUNT` as `0.001` in the .env file. You can change it. This amount will be transfered to the contract balance. 
 
-5. Open terminal and start to execute commands:
+6. Open terminal and start to execute commands:
 
 This command will install all the libraries needed to deploy the contracts
 
@@ -29,16 +29,16 @@ This command will install all the libraries needed to deploy the contracts
 npm i
 ```
 
-6. Type next command. It will deploy the contract.
+7. Type next command. It will deploy the contract.
 
 ```bash
 node deploy.js
 ```
 
-7. Аfter executing the previous command in the terminal you should see the contract address. You must copy this address and specify it in your .env as `CONTRACT_ADDRESS`.
+8. Аfter executing the previous command in the terminal you should see the contract address. You must copy this address and specify it in your .env as `CONTRACT_ADDRESS`.
 
 
-8. Type next command. It will transfer amount you specified as `REFILL_AMOUNT` to the contract.
+9. Type next command. It will transfer amount you specified as `REFILL_AMOUNT` to the contract.
 
 ```bash
 node refill.js
