@@ -41,7 +41,7 @@ This is where the deployment of contract ends. Now we need to configure the file
 
 1. Open /production/ folder via VS Code.
 
-2. In `/constants/constants.js` specify the `CONTRACT_ADDRESS`, as `TBNB_CONTRACT_ADDRESS` you specified earlier in the .env.
+2. In `/constants/constants.js` specify the `CONTRACT_ADDRESS`, as you specified earlier in the .env.
 
 3. Open terminal and start to execute commands:
 
