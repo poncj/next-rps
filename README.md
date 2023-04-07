@@ -1,38 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Assignment 4 | Rock Paper Scissors | Next.js
 
-## Getting Started
+## How to use
 
-First, run the development server:
+Everything in the `/deploy/` folder is intended to be used on local machine.
+
+Everything in the `/production/` folder is for use on the local machine and for configuring the frontend of the application.
+At the end of the setup you will have an `/out/` folder to upload to the hosting.
+
+So for a successful installation, we must first deploy the contract, and then upload the files from the production folder to the hosting.
+
+### How to /deploy/ contract
+
+1. Download full repository to your local machine.
+
+2. Open /deploy/ folder via VS Code
+
+3. Create the .env file inside /deploy/ folder and specify your `TBNB_PRIVATE_KEY` in it from which the contract will be deployed.
+
+3. Also specify `TBNB_RPC_URL` in the .env file.
+
+3. Open terminal and start to execute commands:
+
+This command will install all the libraries needed to deploy the contracts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Type next command. It will deploy the contract.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+npx hardhat run scripts/deploy.js --network tbnb
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+4. Аfter executing the previous command in the terminal we should see the contract address. You must copy this address and specify it in your .env as `TBNB_CONTRACT_ADDRESS`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+This is where the deployment of contract ends. Now we need to configure the files of the /production/ folder.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### How to configure /production/
 
-## Learn More
+1. Open /production/ folder via VS Code.
 
-To learn more about Next.js, take a look at the following resources:
+2. In `/constants/constants.js` specify the `CONTRACT_ADDRESS`, as `TBNB_CONTRACT_ADDRESS` you specified earlier in the .env.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Open terminal and start to execute commands:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This command will install everything you need to configure the frontend for application
 
-## Deploy on Vercel
+```bash
+npm i
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Type next command. It will build frontend files for application.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npx next build
+```
+
+5. Type next command. It will prepare frontend files for upload.
+
+```bash
+npx next export
+```
+
+Now you will see that we have a new directory `/production/out/`. You need to upload the files of the `/out/` folder to the hosting.
+
+## Done!
