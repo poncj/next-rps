@@ -35,7 +35,7 @@ npm i
 node deploy.js
 ```
 
-7. Аfter executing the previous command in the terminal we should see the contract address. You must copy this address and specify it in your .env as `CONTRACT_ADDRESS`.
+7. Аfter executing the previous command in the terminal you should see the contract address. You must copy this address and specify it in your .env as `CONTRACT_ADDRESS`.
 
 
 8. Type next command. It will transfer amount you specified as `REFILL_AMOUNT` to the contract.
