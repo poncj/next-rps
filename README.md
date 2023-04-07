@@ -19,7 +19,9 @@ So for a successful installation, we must first deploy the contract, and then up
 
 3. Also specify `RPC_URL` in the .env file.
 
-3. Open terminal and start to execute commands:
+4. Specify `REFILL_AMOUNT` as `0.001` in the .env file. You can change it. This amount will be transfered to the contract balance. 
+
+5. Open terminal and start to execute commands:
 
 This command will install all the libraries needed to deploy the contracts
 
@@ -27,13 +29,20 @@ This command will install all the libraries needed to deploy the contracts
 npm i
 ```
 
-4. Type next command. It will deploy the contract.
+6. Type next command. It will deploy the contract.
 
 ```bash
 node deploy.js
 ```
 
-4. Аfter executing the previous command in the terminal we should see the contract address. You must copy this address and specify it in your .env as `CONTRACT_ADDRESS`.
+7. Аfter executing the previous command in the terminal we should see the contract address. You must copy this address and specify it in your .env as `CONTRACT_ADDRESS`.
+
+
+8. Type next command. It will transfer amount you specified as `REFILL_AMOUNT` to the contract.
+
+```bash
+node refill.js
+```
 
 This is where the deployment of contract ends. Now we need to configure the files of the /production/ folder.
 
