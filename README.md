@@ -1,6 +1,7 @@
 # Assignment 4 | Rock Paper Scissors | Next.js
 
 Live demo: https://nextrps.npiv.ru/
+> Works only on TBNB!
 
 ## How to use
 
