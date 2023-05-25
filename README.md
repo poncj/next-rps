@@ -1,5 +1,7 @@
 # Assignment 4 | Rock Paper Scissors | Next.js
 
+Live demo: https://nextrps.npiv.ru/
+
 ## How to use
 
 Everything in the `/deploy/` folder is intended to be used on local machine.
